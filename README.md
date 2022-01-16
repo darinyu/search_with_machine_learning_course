@@ -5,7 +5,7 @@ quickly get up to speed on search best practices by first teaching the basics of
 
 Students will learn indexing, querying, aggregations and text analysis, as well as how to use machine learning for ranking, content classification and query understanding.
 
-The class is a hands-on project-driven course where students will work with real data and the [Opensearch](https://opensearch.com)/Elasticsearch ecosystem along with libraries like [FastText](https://fasttext.cc/)
+The class is a hands-on project-driven course where students will work with real data and the [Opensearch](https://opensearch.com)/Elasticsearch ecosystem along with libraries like [FastText](https://fasttext.cc/), [XG Boost](https://xgboost.readthedocs.io/en/stable/) and [OpenSearch Learning to Rank](https://github.com/aparo/opensearch-learning-to-rank).
 
 # Class code layout (e.g. where the projects are)
 
@@ -40,7 +40,7 @@ The following things must be done each time you create a new Gitpod Workspace (u
 1. Launch a new Gitpod workspace based on this repository.  This will automatically start OpenSearch and OpenSearch Dashboards.
     1. Note: it can take a few minutes for OpenSearch and the dashboards to launch.        
 1. You should now have a running Opensearch instance (port 9200) and a running Opensearch Dashboards instance (port 5601)
-1. Login to the dashboards at `https://5601-<$GITPOD_URL>/` with default username `admin` and password `admin`. Change your password to something you will remember, as these are public instances.
+1. Login to the dashboards at `https://5601-<$GITPOD_URL>/` with default username `admin` and password `admin`. Change your password to something you will remember, as these are public instances.  This should popup automatically as a new tab, unless you have blocked popups.
 
         $GITPOD_URL is a placeholder for your ephemeral Gitpod host name, e.g. silver-grasshopper-8czadqyn.ws-us25.gitpod.io     
 
@@ -57,7 +57,7 @@ The following things must be done each time you create a new Gitpod Workspace (u
 
 # Exploring the OpenSearch Sample Dashboards and Data
 
-1. Login to OpenSearch and point your browser at http://<$GITPOD_URL>:5601/app/opensearch_dashboards_overview#/
+1. Login to OpenSearch and point your browser at `https://5601-<$GITPOD_URL>/app/opensearch_dashboards_overview#/`
 1. Click the "Add sample data" link
 1. Click the "Add Data" link for any of the 3 projects listed. In the class, we chose the "Sample flight data", but any of the three are fine for exploration.
 
@@ -74,6 +74,7 @@ At the command line, do the following steps to run the example.  For purposes of
     1. `export FLASK_ENV=development`
     1.  *_IMPORTANT_* Set the Flask App Environment Variable: `export FLASK_APP=week2` 
     1. `flask run --port 3000` (The default port of 5000 is already in use) 
+    1. Open the Flask APP at `https://3000-<$GITPOD_URL>/`
     
 # Working locally (Not supported, but may work for you. YMMV)
 

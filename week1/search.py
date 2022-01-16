@@ -5,7 +5,7 @@ from flask import (
     Blueprint, redirect, render_template, request, url_for
 )
 
-from week1_finished.opensearch import get_opensearch
+from week1.opensearch import get_opensearch
 
 bp = Blueprint('search', __name__, url_prefix='/search')
 
@@ -22,10 +22,14 @@ def process_filters(filters_input):
     for filter in filters_input:
         type = request.args.get(filter + ".type")
         display_name = request.args.get(filter + ".displayName", filter)
+        #
+        # We need to capture and return what filters are already applied so they can be automatically added to any existing links we display in aggregations.jinja2
         applied_filters += "&filter.name={}&{}.type={}&{}.displayName={}".format(filter, filter, type, filter,
                                                                                  display_name)
+        #TODO: IMPLEMENT AND SET filters, display_filters and applied_filters.
+        # filters get used in create_query below.  display_filters gets used by display_filters.jinja2 and applied_filters gets used by aggregations.jinja2 (and any other links that would execute a search.)
         if type == "range":
-            pass #TODO: IMPLEMENT
+            pass
         elif type == "terms":
             pass #TODO: IMPLEMENT
     print("Filters: {}".format(filters))
